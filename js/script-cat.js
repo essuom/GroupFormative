@@ -16,7 +16,7 @@ $(function(){
 		java : ".10",
 		php : ".10",
 	}
-
+	
 
 	let bioHTML = $('#templateBio').text();
 	let bioTemplate = Template7(bioHTML).compile();
