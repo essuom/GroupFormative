@@ -1,10 +1,8 @@
 $(function(){
 
 	let key = 'OD4RellvdYJQmQup6ki22mLUOsJIGVT4';
-	let projectHTML = $('#templatePhotos').text();
-	let projectTemplate = Template7(projectHTML).compile();
 
-		let urlUser = 'https://api.behance.net/v2/users/bezantee?client_id='+key+'';
+	let urlUser = 'https://api.behance.net/v2/users/bezantee?client_id='+key+'';
 
 	let urlProjects = 'https://api.behance.net/v2/users/bezantee/projects?client_id='+key;
 
