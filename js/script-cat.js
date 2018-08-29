@@ -20,6 +20,40 @@ $(function(){
 	}
 
 
+	// using the behance api to change profile
+	if ($('.cat-intro').length > 0){
+		$.ajax({
+			url:urlUser,
+			dataType:'jsonp',
+			success:function(res){
+				var user = res.user;
+				// console.log(user);
+				let bioHTML = $('#templateBio').text();
+				let bioTemplate = Template7(bioHTML).compile();
+				var bioOutput = bioTemplate(user);
+				$('.cat-intro').append(bioOutput);
+			}
+		});
+	}
+
+	// using behance api to change portfolio labels
+	if ($('.portfolio-details').length > 0){
+		$.ajax({
+			url:urlUser,
+			dataType:'jsonp',
+			success:function(res){
+				var user = res.user;
+				// console.log(res.user.fields[0]);
+				let portDetailsHTML = $('#templatePortfolioDetails').text();
+				let portDetailsTemplate = Template7(portDetailsHTML).compile();
+				var portDetailsOutput = portDetailsTemplate(user);
+
+				$('.portfolio-details').empty();
+				$('.portfolio-details').append(portDetailsOutput);
+			}
+		});
+	}
+
 
 	// using behance api to change portfolio items
 	if ($('.portfolio-box').length > 0){
@@ -76,23 +110,6 @@ $(function(){
 		$('.pie-stats').append(pieOutput);
 
 
-
-		// using the behance api to change profile
-		if ($('.cat-intro').length > 0){
-			$.ajax({
-				url:urlUser,
-				dataType:'jsonp',
-				success:function(res){
-					var user = res.user;
-					// console.log(user);
-					let bioHTML = $('#templateBio').text();
-					let bioTemplate = Template7(bioHTML).compile();
-					var bioOutput = bioTemplate(user);
-					$('.cat-intro').append(bioOutput);
-				}
-			});
-		}
-
 		// using behance api to change portfolio labels
 		if ($('.portfolio-details').length > 0){
 			$.ajax({
@@ -112,12 +129,34 @@ $(function(){
 		}
 
 
+		// // using behance api to change portfolio items
+		// if ($('.portfolio-box').length > 0){
+		// 	$.ajax({
+		// 		url:urlProjects,
+		// 		dataType:'jsonp',
+		// 		success:function(res){
+		// 			var projectImages = res.projects;
+
+
+		// 			_(projectImages.slice(0,12)).each(function(project){
+		// 				console.log(project)
+		// 				let portImagesHTML = $('#templatePortfolioImages').text();
+		// 				let portImagesTemplate = Template7(portImagesHTML).compile();
+		// 				var portImagesOutput = portImagesTemplate(project);
+
+		// 				// $('.portfolio-box').empty();
+		// 				$('.portfolio-box').append(portImagesOutput);
+		// 			});
+		// 		}
+		// 	});
+		// }
+
 	});
 
 
 })
 
-// <div class="p-item branding graphic-design">
+// 			<div class="p-item branding graphic-design">
 // 				<a href="images/portfolio-7-600x800.jpg" data-fluidbox>
 // 					<img src="images/portfolio-7-600x800.jpg" alt=""></a>
 // 			</div><!-- p-item -->
