@@ -3,10 +3,6 @@ $(function(){
 	var key = 'ykgc3THEeDv6eBUp71hoEz8AplMLEedG';
 	// var key = 'WgfZ8Qf6EftAn1yqwMEYnJC37p9nJG0J';
 
-	let projectHTML = $('#templatePhotos').text();
-	let projectTemplate = Template7(projectHTML).compile();
-
-
 	let urlUser = 'https://api.behance.net/v2/users/vladimirsartdesign?client_id='+key+'';
 	let urlProjects = 'https://api.behance.net/v2/users/vladimirsartdesign/projects?client_id='+key;
 
@@ -23,6 +19,8 @@ $(function(){
 		php : ".10",
 	}
 
+
+	// using the behance api to change profile
 	if ($('.cat-intro').length > 0){
 		$.ajax({
 			url:urlUser,
@@ -38,6 +36,8 @@ $(function(){
 		})
 	}
 
+	// making the list limited
+	// console.log(res.projects.slice(0,12));
 
 
 	// let bioHTML = $('#templateBio').text();
