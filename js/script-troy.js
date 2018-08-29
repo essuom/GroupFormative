@@ -35,6 +35,15 @@ $(function(){
 	$('.about-me').empty();
 	$('.about-me').append(aboutOutput);
 
+	let percentHTML = $('#templatePercent').text();
+	let percentTemplate = Template7(percentHTML).compile();
+
+	var percentOutput = percentTemplate(details);
+
+
+	$('#percentbar').empty();
+	$('#percentbar').append(percentOutput);
+
 
 
 
