@@ -1,5 +1,5 @@
 $(function(){
-	let key = 'eHGyRZz5u7oHD5b22xC3XebSc71QLh2C';
+	let key = 'K9v5M2jI6thynjC3Ljl9ucKdHhfghDnZ';
 	let projectHTML = $('#templatePhotos').text();
 	let projectTemplate = Template7(projectHTML).compile();
 	let urlProjects = 'https://api.behance.net/v2/users/pervinozcan/projects?client_id='+key;
@@ -24,7 +24,7 @@ $(function(){
 	var bioOutput = bioTemplate(details);
 
 
-	$('.troy-intro').append(bioOutput);
+	$('.judy-intro').append(bioOutput);
 
 	let aboutHTML = $('#templateAbout').text();
 	let aboutTemplate = Template7(aboutHTML).compile();
