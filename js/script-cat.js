@@ -28,24 +28,24 @@ $(function(){
 			url:urlUser,
 			dataType:'jsonp',
 			success:function(res){
-				console.log(res.user);
+				var user = res.user;
+				console.log(user);
 				let bioHTML = $('#templateBio').text();
 				let bioTemplate = Template7(bioHTML).compile();
-				// var bioOutput = bioTemplate(user);
-
+				var bioOutput = bioTemplate(user);
+				$('.cat-intro').append(bioOutput);
 			}
 		})
 	}
 
 
 
-	let bioHTML = $('#templateBio').text();
-	let bioTemplate = Template7(bioHTML).compile();
+	// let bioHTML = $('#templateBio').text();
+	// let bioTemplate = Template7(bioHTML).compile();
 
-	var bioOutput = bioTemplate(details);
+	// var bioOutput = bioTemplate(details);
+	// $('.cat-intro').append(bioOutput);
 
-
-	$('.cat-intro').append(bioOutput);
 
 	$('.cat-intro').on('click', function(){
 
