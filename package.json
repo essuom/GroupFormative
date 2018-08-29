@@ -1,0 +1,27 @@
+{
+  "name": "group_formative",
+  "version": "1.0.0",
+  "description": "group formative august",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/essuom/GroupFormative.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/essuom/GroupFormative/issues"
+  },
+  "homepage": "https://github.com/essuom/GroupFormative#readme"
+}
