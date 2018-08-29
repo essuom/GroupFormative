@@ -1,8 +1,14 @@
 $(function(){
-	let key = 'eHGyRZz5u7oHD5b22xC3XebSc71QLh2C';
+
+	var key = 'ykgc3THEeDv6eBUp71hoEz8AplMLEedG';
+	// var key = 'WgfZ8Qf6EftAn1yqwMEYnJC37p9nJG0J';
+
 	let projectHTML = $('#templatePhotos').text();
 	let projectTemplate = Template7(projectHTML).compile();
-	let urlProjects = 'https://api.behance.net/v2/users/pervinozcan/projects?client_id='+key;
+
+
+	let urlUser = 'https://api.behance.net/v2/users/vladimirsartdesign?client_id='+key+'';
+	let urlProjects = 'https://api.behance.net/v2/users/vladimirsartdesign/projects?client_id='+key;
 
 	var details = 
 	{
@@ -16,7 +22,22 @@ $(function(){
 		java : ".10",
 		php : ".10",
 	}
-	
+
+	if ($('.cat-intro').length > 0){
+		$.ajax({
+			url:urlUser,
+			dataType:'jsonp',
+			success:function(res){
+				console.log(res.user);
+				let bioHTML = $('#templateBio').text();
+				let bioTemplate = Template7(bioHTML).compile();
+				// var bioOutput = bioTemplate(user);
+
+			}
+		})
+	}
+
+
 
 	let bioHTML = $('#templateBio').text();
 	let bioTemplate = Template7(bioHTML).compile();

@@ -24,16 +24,33 @@ $(function(){
 	var bioOutput = bioTemplate(details);
 
 
-	$('.troy-intro').append(bioOutput);
+	$('.judy-intro').append(bioOutput);
 
-	let aboutHTML = $('#templateAbout').text();
-	let aboutTemplate = Template7(aboutHTML).compile();
-
-	var aboutOutput = aboutTemplate(details);
+	$('.judy-intro').on('click', function(){
 
 
-	$('.about-me').empty();
-	$('.about-me').append(aboutOutput);
+		// About Text
+		let aboutHTML = $('#templateAbout').text();
+		let aboutTemplate = Template7(aboutHTML).compile();
+
+		var aboutOutput = aboutTemplate(details);
+
+
+		$('.about-me').empty();
+		$('.about-me').append(aboutOutput);
+
+		// Pie Stats
+		let pieHTML = $('#templateStats').text();
+		let pieTemplate = Template7(pieHTML).compile();
+
+		var pieOutput = pieTemplate(details);
+
+		$('.pie-stats').append(pieOutput);
+
+
+
+
+	});
 
 
 
