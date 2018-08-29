@@ -203,8 +203,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<h2><b>{{display_name}}</b></h2>
 		<h4 class="font-yellow">{{occupation}}</h4>
 		<ul class="information margin-tb-30">
-			<li><b>Location : </b>{{city}}, {{country}}</li>
-			<li><b>Email : </b>{{sections.Contact}}</li>
+			<li><b>Location : </b>{{location}}</li>
+			<li>{{#each fields}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</li>
 		</ul>
 		<ul class="social-icons">
 			<li><a href="#"><i class="ion-social-pinterest"></i></a></li>
