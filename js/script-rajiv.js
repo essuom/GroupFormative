@@ -1,7 +1,11 @@
 $(function(){
+
 	let key = 'OD4RellvdYJQmQup6ki22mLUOsJIGVT4';
 	let projectHTML = $('#templatePhotos').text();
 	let projectTemplate = Template7(projectHTML).compile();
+
+		let urlUser = 'https://api.behance.net/v2/users/bezantee?client_id='+key+'';
+
 	let urlProjects = 'https://api.behance.net/v2/users/bezantee/projects?client_id='+key;
 
 	var details = 
@@ -10,21 +14,34 @@ $(function(){
 		title: "Front End Developer",
 		born: "1993",
 		email: "rnarandas@gmail.com",
-		about: "Hi",
-		htmlCSS : .50,
-		webDesign : ".10",
-		java : ".10",
-		php : ".10",
+		about: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, voluptatem, porro. Beatae.",
+		htmlCSS : .60,
+		webDesign : ".20",
+		java : ".20",
+		php : ".20",
+	}
+
+	if ($('.rajiv-intro').length > 0){
+		$.ajax({
+			url:urlUser,
+			dataType:'jsonp',
+			success:function(res){
+				var user = res.user;
+				let bioHTML = $('#templateBio').text();
+				let bioTemplate = Template7(bioHTML).compile();
+				var bioOutput = bioTemplate(user);
+				$('.rajiv-intro').append(bioOutput);
+			}
+		})
 	}
 	
 
-	let bioHTML = $('#templateBio').text();
-	let bioTemplate = Template7(bioHTML).compile();
+	// let bioHTML = $('#templateBio').text();
+	// let bioTemplate = Template7(bioHTML).compile();
 
-	var bioOutput = bioTemplate(details);
+	// var bioOutput = bioTemplate(details);
+	// $('.rajiv-intro').append(bioOutput);
 
-
-	$('.rajiv-intro').append(bioOutput);
 
 	$('.rajiv-intro').on('click', function(){
 
