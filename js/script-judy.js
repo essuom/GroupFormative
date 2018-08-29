@@ -2,7 +2,9 @@ $(function(){
 	let key = 'K9v5M2jI6thynjC3Ljl9ucKdHhfghDnZ';
 	let projectHTML = $('#templatePhotos').text();
 	let projectTemplate = Template7(projectHTML).compile();
-	let urlProjects = 'https://api.behance.net/v2/users/pervinozcan/projects?client_id='+key;
+
+	let urlUser = 'https://api.behance.net/v2/users/zr1985judy65b2?client_id='+key+'';
+	let urlProjects = 'https://api.behance.net/v2/users/zr1985judy65b2/projects?client_id='+key;
 
 	var details = 
 	{
