@@ -18,13 +18,29 @@ $(function(){
 	}
 
 
-	let bioHTML = $('#templateBio').text();
-	let bioTemplate = Template7(bioHTML).compile();
+	if ($('.judy-intro').length > 0){
+		$.ajax({
+			url:urlUser,
+			dataType:'jsonp',
+			success:function(res){
+				var user = res.user;
+				console.log(user);
+				let bioHTML = $('#templateBio').text();
+				let bioTemplate = Template7(bioHTML).compile();
+				var bioOutput = bioTemplate(user);
+				$('.judy-intro').append(bioOutput);
+			}
+		})
+	}
 
-	var bioOutput = bioTemplate(details);
 
 
-	$('.judy-intro').append(bioOutput);
+	// let bioHTML = $('#templateBio').text();
+	// let bioTemplate = Template7(bioHTML).compile();
+
+	// var bioOutput = bioTemplate(details);
+	// $('.judy-intro').append(bioOutput);
+
 
 	$('.judy-intro').on('click', function(){
 
