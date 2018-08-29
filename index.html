@@ -61,74 +61,14 @@
 	
 	<section class="portfolio-section section">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="heading">
-						<h3><b>Portfolio</b></h3>
-						<h6 class="font-lite-black"><b>MY WORK</b></h6>
-					</div>
-				</div><!-- col-sm-4 -->
-				<div class="col-sm-8">
-					<div class="portfolioFilter clearfix margin-b-80">
-						<a href="#" data-filter="*" class="current"><b>ALL</b></a>
-						<a href="#" data-filter=".web-design"><b>WEB DESIGN</b></a>
-						<a href="#" data-filter=".branding"><b>BRANDING</b></a>
-						<a href="#" data-filter=".graphic-design"><b>GRAPHIC DESIGN</b></a>
-					</div><!-- portfolioFilter -->
-				</div><!-- col-sm-8 -->
+			<div class="row portfolio-details">
+
 			</div><!-- row -->
 		</div><!-- container -->
 		
-		<div class="portfolioContainer">
+		<div class="portfolioContainer portfolio-box">
 			
-			<div class="p-item web-design">
-				<a href="images/portfolio-1-600x400.jpg" data-fluidbox>
-					<img src="images/portfolio-1-600x400.jpg" alt=""></a>
-			</div><!-- p-item -->
-			
-			<div class="p-item branding graphic-design">
-				<a href="images/portfolio-7-600x800.jpg" data-fluidbox>
-					<img src="images/portfolio-7-600x800.jpg" alt=""></a>
-			</div><!-- p-item -->
-			
-			<div class="p-item web-design">
-				<a href="images/portfolio-2-600x400.jpg" data-fluidbox>
-					<img src="images/portfolio-2-600x400.jpg" alt=""></a>
-			</div><!-- p-item -->
-			
-			<div class="p-item p-item-2 graphic-design">
-				<a class="img" href="images/portfolio-8-300x400.jpg" data-fluidbox>
-					<img src="images/portfolio-8-300x400.jpg" alt=""></a>
-				<a class="img" href="images/portfolio-9-300x400.jpg" data-fluidbox>
-					<img src="images/portfolio-9-300x400.jpg" alt=""></a>
-			</div><!-- p-item -->
-			
-			<div class="p-item branding graphic-design">
-				<a href="images/portfolio-3-600x400.jpg" data-fluidbox>
-					<img src="images/portfolio-3-600x400.jpg" alt=""></a>
-			</div><!-- p-item -->
-			
-			<div class="p-item graphic-design web-design">
-				<a href="images/portfolio-4-600x400.jpg" data-fluidbox>
-					<img src="images/portfolio-4-600x400.jpg" alt=""></a>
-			</div><!-- p-item -->
-			
-			<div class="p-item  graphic-design branding">
-				<a href="images/portfolio-5-600x800.jpg" data-fluidbox>
-					<img src="images/portfolio-5-600x800.jpg" alt=""></a>
-			</div><!-- p-item -->
-				
-			<div class="p-item web-design branding">
-				<a href="images/portfolio-6-600x800.jpg" data-fluidbox>
-					<img src="images/portfolio-6-600x800.jpg" alt=""></a>
-			</div><!-- p-item -->
 
-			<div class="p-item p-item-2 graphic-design">
-				<a class="img" href="images/portfolio-10-300x400.jpg" data-fluidbox>
-					<img src="images/portfolio-10-300x400.jpg" alt=""></a>
-				<a class="img" href="images/portfolio-11-300x400.jpg" data-fluidbox>
-					<img src="images/portfolio-11-300x400.jpg" alt=""></a>
-			</div><!-- p-item -->
 		
 		</div><!-- portfolioContainer -->
 		
@@ -196,7 +136,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	</footer>
-
+	
+	<!-- Intro Section  -->
 	<script id="templateBio" type="text/template7">
 		
 		<div class="profile-img"><img src="{{images[230]}}" alt=""></div>
@@ -213,10 +154,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<li><a href="#"><i class="ion-social-facebook"></i></a></li>
 			<li><a href="#"><i class="ion-social-twitter"></i></a></li>
 		</ul>
-	</script>
+	</script>	<!-- Intro Section  -->
 
+	<!-- About Section  -->
 	<script id="templateAbout" type="text/template7">
 		{{about}}
+	</script>	<!-- About Section  -->
+
+	<!-- Portfolio Details -->
+	<script id="templatePortfolioDetails" type="text/template7">
+		<div class="col-sm-4">
+			<div class="heading">
+				<h3><b>Portfolio</b></h3>
+				<h6 class="font-lite-black"><b>{{display_name}}</b></h6>
+			</div>
+		</div><!-- col-sm-4 -->
+		<div class="col-sm-8">
+			<div class="portfolioFilter clearfix margin-b-80">
+				<a href="#" data-filter="*" class="current"><b>ALL</b></a>
+				<a href="#" data-filter=".{{fields[0]}}"><b>{{fields[0]}}</b></a>
+				<a href="#" data-filter=".{{fields[1]}}"><b>{{fields[1]}}</b></a>
+				<a href="#" data-filter=".{{fields[2]}}"><b>{{fields[2]}}</b></a>
+			</div><!-- portfolioFilter -->
+		</div><!-- col-sm-8 -->
+	</script>
+
+	<!-- Portfolio Images -->
+	<script id="templatePortfolioImages" type="text/template7">
+			<div class="p-item {{#each fields}}{{this}}{{#unless @last}} {{/unless}}{{/each}}">
+				<a href="{{covers[404]}}" data-fluidbox>
+					<img src="{{covers[404]}}" alt=""></a>
+			</div><!-- p-item -->
 	</script>
 
 	<script id="templateStats" type="text/template7">
