@@ -19,6 +19,7 @@ $(function(){
 		php : ".20",
 	}
 
+	// using the behance api to change profile
 	if ($('.rajiv-intro').length > 0){
 		$.ajax({
 			url:urlUser,
@@ -32,7 +33,24 @@ $(function(){
 			}
 		})
 	}
-	
+
+		// using behance api to change portfolio labels
+	if ($('.portfolio-details').length > 0){
+		$.ajax({
+			url:urlUser,
+			dataType:'jsonp',
+			success:function(res){
+				var user = res.user;
+				// console.log(res.user.fields[0]);
+				let portDetailsHTML = $('#templatePortfolioDetails').text();
+				let portDetailsTemplate = Template7(portDetailsHTML).compile();
+				var portDetailsOutput = portDetailsTemplate(user);
+
+				$('.portfolio-details').empty();
+				$('.portfolio-details').append(portDetailsOutput);
+			}
+		});
+	}
 
 	// let bioHTML = $('#templateBio').text();
 	// let bioTemplate = Template7(bioHTML).compile();
@@ -61,6 +79,24 @@ $(function(){
 		var pieOutput = pieTemplate(details);
 
 		$('.pie-stats').append(pieOutput);
+
+		// using behance api to change portfolio labels
+		if ($('.portfolio-details').length > 0){
+			$.ajax({
+				url:urlUser,
+				dataType:'jsonp',
+				success:function(res){
+					var user = res.user;
+					// console.log(res.user.fields[0]);
+					let portDetailsHTML = $('#templatePortfolioDetails').text();
+					let portDetailsTemplate = Template7(portDetailsHTML).compile();
+					var portDetailsOutput = portDetailsTemplate(user);
+
+					$('.portfolio-details').empty();
+					$('.portfolio-details').append(portDetailsOutput);
+				}
+			});
+		}
 
 
 
