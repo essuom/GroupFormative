@@ -83,6 +83,27 @@ $(function(){
 			});
 		}
 
+		// using behance api to change portfolio items
+		if ($('.portfolio-box').length > 0){
+			$.ajax({
+				url:urlProjects,
+				dataType:'jsonp',
+				success:function(res){
+					var projectImages = res.projects;
+
+
+					_(projectImages.slice(0,12)).each(function(project){
+						console.log(project)
+						let portImagesHTML = $('#templatePortfolioImages').text();
+						let portImagesTemplate = Template7(portImagesHTML).compile();
+						var portImagesOutput = portImagesTemplate(project);
+
+						$('.portfolio-box').empty();
+						$('.portfolio-box').append(portImagesOutput);
+					});
+				}
+			});
+		}
 
 
 

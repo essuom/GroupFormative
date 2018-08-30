@@ -1,7 +1,7 @@
 $(function(){
 
-	// var key = 'ykgc3THEeDv6eBUp71hoEz8AplMLEedG';
-	var key = 'WgfZ8Qf6EftAn1yqwMEYnJC37p9nJG0J';
+	var key = 'ykgc3THEeDv6eBUp71hoEz8AplMLEedG';
+	// var key = 'WgfZ8Qf6EftAn1yqwMEYnJC37p9nJG0J';
 
 	let urlUser = 'https://api.behance.net/v2/users/vladimirsartdesign?client_id='+key+'';
 	let urlProjects = 'https://api.behance.net/v2/users/vladimirsartdesign/projects?client_id='+key;
@@ -36,27 +36,6 @@ $(function(){
 		});
 	}
 
-	// using behance api to change portfolio items
-	if ($('.portfolio-box').length > 0){
-		$.ajax({
-			url:urlProjects,
-			dataType:'jsonp',
-			success:function(res){
-				var projectImages = res.projects;
-
-
-				_(projectImages.slice(0,12)).each(function(project){
-					// console.log(project)
-					let portImagesHTML = $('#templatePortfolioImages').text();
-					let portImagesTemplate = Template7(portImagesHTML).compile();
-					var portImagesOutput = portImagesTemplate(project);
-
-					// $('.portfolio-box').empty();
-					$('.portfolio-box').append(portImagesOutput);
-				});
-			}
-		});
-	}
 
 	// making the list limited
 	// console.log(res.projects.slice(0,12));
@@ -110,27 +89,27 @@ $(function(){
 		}
 
 
-		// // using behance api to change portfolio items
-		// if ($('.portfolio-box').length > 0){
-		// 	$.ajax({
-		// 		url:urlProjects,
-		// 		dataType:'jsonp',
-		// 		success:function(res){
-		// 			var projectImages = res.projects;
+		// using behance api to change portfolio items
+		if ($('.portfolio-box').length > 0){
+			$.ajax({
+				url:urlProjects,
+				dataType:'jsonp',
+				success:function(res){
+					var projectImages = res.projects;
 
 
-		// 			_(projectImages.slice(0,12)).each(function(project){
-		// 				console.log(project)
-		// 				let portImagesHTML = $('#templatePortfolioImages').text();
-		// 				let portImagesTemplate = Template7(portImagesHTML).compile();
-		// 				var portImagesOutput = portImagesTemplate(project);
+					_(projectImages.slice(0,12)).each(function(project){
+						console.log(project)
+						let portImagesHTML = $('#templatePortfolioImages').text();
+						let portImagesTemplate = Template7(portImagesHTML).compile();
+						var portImagesOutput = portImagesTemplate(project);
 
-		// 				// $('.portfolio-box').empty();
-		// 				$('.portfolio-box').append(portImagesOutput);
-		// 			});
-		// 		}
-		// 	});
-		// }
+						$('.portfolio-box').empty();
+						$('.portfolio-box').append(portImagesOutput);
+					});
+				}
+			});
+		}
 
 	});
 
