@@ -37,6 +37,24 @@ $(function(){
 	}
 
 
+	// using behance api to change portfolio labels
+	if ($('.portfolio-details').length > 0){
+		$.ajax({
+			url:urlUser,
+			dataType:'jsonp',
+			success:function(res){
+				var user = res.user;
+				// console.log(res.user.fields[0]);
+				let portDetailsHTML = $('#templatePortfolioDetails').text();
+				let portDetailsTemplate = Template7(portDetailsHTML).compile();
+				var portDetailsOutput = portDetailsTemplate(user);
+
+				$('.portfolio-details').empty();
+				$('.portfolio-details').append(portDetailsOutput);
+			}
+		});
+	}
+
 	// About Text
 	let aboutHTML = $('#templateAbout').text();
 	let aboutTemplate = Template7(aboutHTML).compile();
@@ -55,6 +73,74 @@ $(function(){
 
 	$('#percentbar').empty();
 	$('#percentbar').append(percentOutput);
+
+	$('.troy-intro').on('click', function(){
+
+
+		// About Text
+		let aboutHTML = $('#templateAbout').text();
+		let aboutTemplate = Template7(aboutHTML).compile();
+
+		var aboutOutput = aboutTemplate(details);
+
+
+		$('.about-me').empty();
+		$('.about-me').append(aboutOutput);
+
+		// Pie Stats
+		let pieHTML = $('#templateStats').text();
+		let pieTemplate = Template7(pieHTML).compile();
+
+		var pieOutput = pieTemplate(details);
+
+		$('.pie-stats').append(pieOutput);
+
+
+		// using behance api to change portfolio labels
+		if ($('.portfolio-details').length > 0){
+			$.ajax({
+				url:urlUser,
+				dataType:'jsonp',
+				success:function(res){
+					var user = res.user;
+					// console.log(res.user.fields[0]);
+					let portDetailsHTML = $('#templatePortfolioDetails').text();
+					let portDetailsTemplate = Template7(portDetailsHTML).compile();
+					var portDetailsOutput = portDetailsTemplate(user);
+
+					$('.portfolio-details').empty();
+					$('.portfolio-details').append(portDetailsOutput);
+				}
+			});
+		}
+
+
+		// // using behance api to change portfolio items
+		// if ($('.portfolio-box').length > 0){
+		// 	$.ajax({
+		// 		url:urlProjects,
+		// 		dataType:'jsonp',
+		// 		success:function(res){
+		// 			var projectImages = res.projects;
+
+
+		// 			_(projectImages.slice(0,12)).each(function(project){
+		// 				console.log(project)
+		// 				let portImagesHTML = $('#templatePortfolioImages').text();
+		// 				let portImagesTemplate = Template7(portImagesHTML).compile();
+		// 				var portImagesOutput = portImagesTemplate(project);
+
+		// 				// $('.portfolio-box').empty();
+		// 				$('.portfolio-box').append(portImagesOutput);
+		// 			});
+		// 		}
+		// 	});
+		// }
+
+	});
+
+
+
 
 
 	// LINE PROGRESS BAR
