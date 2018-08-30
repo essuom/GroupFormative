@@ -128,8 +128,8 @@ header .downlad-btn:hover{ -webkit-transform: translateY(-4px); transform: trans
 4. INTRO SECTION
 --------------------------------- */
 
-.intro-section{ padding-top: 200px; position: relative; background-size: cover; 
-	z-index: 1;background-image: url(../../images/slider-1-1920x1080.jpg); }
+.intro-section{ padding-top: 100px; position: relative; background-size: cover; 
+	z-index: 1;background-image: url(../../images/yellow-blue.jpg); }
 
 .intro-section:before{ content:''; z-index: -1; position: absolute; top: 0; bottom: 0; left: 0; 
 	right: 0; background: rgba(0,0,0, .2); }
@@ -137,15 +137,15 @@ header .downlad-btn:hover{ -webkit-transform: translateY(-4px); transform: trans
 .intro-section:after{ content: ''; position: absolute; bottom: 0; left: 0; right: 0;
 	height: 150px; z-index: -1; background: #fff; }
 
-.intro{ padding: 0 20px; margin-top: 100px; text-align: center; background: #fff; }
+.intro{ padding: 0px 20px 60px 20px; margin-top: 100px; text-align: center; background: rgba(255,255,255,0.9); }
 
 .intro .profile-img{ height: 200px; width: 200px; border-radius: 100px; margin: 0 auto; 
-	overflow: hidden; position: relative; top: -100px; margin-bottom: -70px;  }
+	overflow: hidden; position: relative; top: -100px; margin-bottom: -70px; border:5px white solid; }
 
 .intro .information > li{ display: block; margin: 5px 0; }
 
 .intro .social-icons > li > a{ height: 35px; line-height: 35px; width: 35px; border-radius: 20px; 
-	overflow: hidden; z-index: 1; position: relative; margin: 0 5px 5px; background: #887392; color: #fff; }
+	overflow: hidden; z-index: 1; position: relative; margin: 0 5px 5px; background: #737373; color: #fff; }
 
 .intro .social-icons > li > a:after{ content: ''; position: absolute; bottom: 0; left: 0; right: 0;
 	top: 0; z-index: -1; border-radius: 20px; background: #FFA804; 
@@ -258,5 +258,8 @@ header .downlad-btn:hover{ -webkit-transform: translateY(-4px); transform: trans
 10. FOOTER
 --------------------------------- */
 
-.copyright{ text-align: center; padding: 30px 0; background: #28023D; }
+.copyright{ text-align: center; padding: 20px 0; background: #737373; }
 
+footer p{
+	font-size:0.1em;
+}

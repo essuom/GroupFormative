@@ -1,0 +1,37 @@
+.intro-section{ 
+	padding-top: 200px; 
+	position: relative; 
+	background-size: cover; 
+	z-index: 1;
+	background-image: url(../../images/whitestairs.jpg); 
+}
+
+.intro .social-icons > li > a{ 
+	height: 35px; line-height: 35px; width: 35px; border-radius: 20px; 
+	overflow: hidden; 
+	z-index: 1; 
+	position: relative; 
+	margin: 0 5px 5px; 
+	background: #8C8C8C; 
+	color: #fff; 
+}
+
+.copyright{ 
+	text-align: center; 
+	padding: 30px 0; 
+	background: #404040; 
+}
+
+path[Attributes Style] {
+    d: path('M 50 50 m 0 -48.5 a 48.5 48.5 0 1 1 0 97 a 48.5 48.5 0 1 1 0 -97');
+    stroke: rgb(250, 173, 8);
+    stroke: #BDBDBD;
+    stroke-width: 2.91482;
+    fill-opacity: 0;
+}
+
+.copyright{ 
+	text-align: center; 
+	padding: 30px 0; 
+	background: #BDBDBD; 
+}
