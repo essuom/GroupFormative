@@ -26,7 +26,7 @@ $(function(){
 			dataType:'jsonp',
 			success:function(res){
 				var user = res.user;
-				console.log(user);
+				// console.log(user);
 				let bioHTML = $('#templateBio').text();
 				let bioTemplate = Template7(bioHTML).compile();
 				var bioOutput = bioTemplate(user);
@@ -93,7 +93,7 @@ $(function(){
 
 
 					_(projectImages.slice(0,12)).each(function(project){
-						console.log(project)
+						// console.log(project)
 						let portImagesHTML = $('#templatePortfolioImages').text();
 						let portImagesTemplate = Template7(portImagesHTML).compile();
 						var portImagesOutput = portImagesTemplate(project);

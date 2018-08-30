@@ -148,7 +148,7 @@ $(function(){
 
 
 					_(projectImages.slice(0,12)).each(function(project){
-						console.log(project)
+						// console.log(project)
 						let portImagesHTML = $('#templatePortfolioImages').text();
 						let portImagesTemplate = Template7(portImagesHTML).compile();
 						var portImagesOutput = portImagesTemplate(project);
