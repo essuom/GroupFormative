@@ -1,7 +1,9 @@
 $(function(){
 	let key = 'eHGyRZz5u7oHD5b22xC3XebSc71QLh2C';
-	let projectHTML = $('#templatePhotos').text();
-	let projectTemplate = Template7(projectHTML).compile();
+	// let projectHTML = $('#templatePhotos').text();
+	// let projectTemplate = Template7(projectHTML).compile();
+
+	let urlUser = 'https://api.behance.net/v2/users/pervinozcan?client_id='+key+'';
 	let urlProjects = 'https://api.behance.net/v2/users/pervinozcan/projects?client_id='+key;
 
 	var details = 
@@ -18,14 +20,24 @@ $(function(){
 	}
 
 
-	let bioHTML = $('#templateBio').text();
-	let bioTemplate = Template7(bioHTML).compile();
+	// using the behance api to change profile
+	if ($('.troy-intro').length > 0){
+		$.ajax({
+			url:urlUser,
+			dataType:'jsonp',
+			success:function(res){
+				var user = res.user;
+				// console.log(user);
+				let bioHTML = $('#templateBio').text();
+				let bioTemplate = Template7(bioHTML).compile();
+				var bioOutput = bioTemplate(user);
+				$('.troy-intro').append(bioOutput);
+			}
+		});
+	}
 
-	var bioOutput = bioTemplate(details);
 
-
-	$('.troy-intro').append(bioOutput);
-
+	// About Text
 	let aboutHTML = $('#templateAbout').text();
 	let aboutTemplate = Template7(aboutHTML).compile();
 
