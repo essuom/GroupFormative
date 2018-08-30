@@ -65,6 +65,24 @@ $(function(){
 
 		$('.pie-stats').append(pieOutput);
 
+		// using behance api to change portfolio labels
+		if ($('.portfolio-details').length > 0){
+			$.ajax({
+				url:urlUser,
+				dataType:'jsonp',
+				success:function(res){
+					var user = res.user;
+					// console.log(res.user.fields[0]);
+					let portDetailsHTML = $('#templatePortfolioDetails').text();
+					let portDetailsTemplate = Template7(portDetailsHTML).compile();
+					var portDetailsOutput = portDetailsTemplate(user);
+
+					$('.portfolio-details').empty();
+					$('.portfolio-details').append(portDetailsOutput);
+				}
+			});
+		}
+
 
 
 
