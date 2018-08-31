@@ -1,6 +1,7 @@
 $(function(){
 
-	let key = 'OD4RellvdYJQmQup6ki22mLUOsJIGVT4';
+	// let key = 'OD4RellvdYJQmQup6ki22mLUOsJIGVT4';
+	let key = 'tgirtSIGzaFobuyRcjfMFMsG2bifIM5W';
 
 	let urlUser = 'https://api.behance.net/v2/users/bezantee?client_id='+key+'';
 
