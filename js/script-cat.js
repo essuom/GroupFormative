@@ -21,6 +21,7 @@ $(function(){
 	}
 
 
+
 	// using the behance api to change profile
 	if ($('.cat-intro').length > 0){
 		$.ajax({
@@ -105,17 +106,13 @@ $(function(){
 
 
 	$('.cat-intro').on('click', function(){
-
+		
 
 		// About Text
 		let aboutHTML = $('#templateAbout').text();
 		let aboutTemplate = Template7(aboutHTML).compile();
 
 		var aboutOutput = aboutTemplate(details);
-
-
-		$('.about-me').empty();
-		$('.about-me').append(aboutOutput);
 
 		// Pie Stats
 		let pieHTML = $('#templateStats').text();
